@@ -18,11 +18,13 @@ app.get('/',function(req,res){
 app.post('/linewebhook', linebotParser);
 
 bot.on('message', function (event) {
-	event.reply(event.message.text).then(function (data) {
-		console.log('Success', data);
-	}).catch(function (error) {
-		console.log('Error', error);
-	});
+	if(event.message.text == "我要"){
+		event.reply("吃雞").then(function (data) {
+			console.log('Success', data);
+		}).catch(function (error) {
+			console.log('Error', error);
+		});
+	}
 });
 
 app.listen(process.env.PORT || 80, function () {
