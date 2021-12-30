@@ -24,7 +24,15 @@ bot.on('message', function (event) {
 		}).catch(function (error) {
 			console.log('Error', error);
 		});
+	}else if(event.message.text == "0"){
+		event.reply("數字0").then(function (data) {
+			console.log('Success', data);
+		}).catch(function (error) {
+			console.log('Error', error);
+		});
 	}
+
+
 });
 
 app.listen(process.env.PORT || 80, function () {
